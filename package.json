@@ -1,0 +1,8 @@
+{
+  "name": "E-CommerceWebsite_admin_fe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/liljaewayne/E-CommerceWebsite_admin_fe.git",
+  "author": "liljaewayne <792068007@qq.com>",
+  "license": "MIT"
+}
