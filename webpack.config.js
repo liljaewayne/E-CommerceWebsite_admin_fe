@@ -11,6 +11,13 @@ module.exports = {
         publicPath: "/dist/",
         filename: 'js/app.js'
     },
+    resolve: {
+        alias: {
+            /* src的模块引用路径 */
+            page: path.resolve(__dirname, 'src/page'),
+            component: path.resolve(__dirname, 'src/component')
+        }
+    },
     module: {
         rules: [
             /* react语法处理 */
@@ -71,7 +78,8 @@ module.exports = {
     plugins: [
         /* 处理html文件 */
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            favicon: './favicon.ico'
         }),
         /* 独立css文件 */
         new ExtractTextPlugin("css/[name].css"),
@@ -83,6 +91,10 @@ module.exports = {
     ],
     devServer: {
         // contentBase: './dist'
-        port: 8086
+        port: 8086,
+        /* 使404页面访问到首页 */
+        historyApiFallback: {
+            index: "/dist/index.html"
+        }
     }
 };
