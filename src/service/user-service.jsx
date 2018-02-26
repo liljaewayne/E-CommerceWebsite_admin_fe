@@ -35,6 +35,14 @@ class UserService {
             msg: '验证通过'
         };
     }
+
+    // 退出登录
+    logout() {
+        return _commerce.request({
+            type: "post",
+            url: '/user/logout.do'
+        });
+    }
 }
 
 export default UserService;

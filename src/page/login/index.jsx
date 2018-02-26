@@ -48,6 +48,8 @@ class Login extends React.Component {
         let checkResult = _userService.checkLoginInfo(loginInfo);
         if (checkResult.status) {
             _userService.login(loginInfo).then((res) => {
+                // 用户信息存储到localStorage
+                _commerce.setStorage('userInfo', res);
                 this.props.history.push(this.state.redirect);
             }, (errMsg) => {
                 _commerce.errorTips(errMsg);

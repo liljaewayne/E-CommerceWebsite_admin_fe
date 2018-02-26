@@ -49,6 +49,37 @@ class CommerceUtil {
         alert(errMsg || 'something went wrong');
     }
 
+    // 写入localStorage
+    setStorage(name, data) {
+        let dataType = typeof data;
+        let basicTypes = ['number', 'string', 'boolean'];
+
+        if (dataType === 'object') {
+            window.localStorage.setItem(name, JSON.stringify(data));
+        }
+        else if (basicTypes.indexOf(dataType) >= 0) {
+            window.localStorage.setItem(name, data);
+        }
+        else {
+            alert('该类型不能用于localStorage');
+        }
+    }
+
+    // 读取localStorage
+    getStorage(name) {
+        let data = window.localStorage.getItem(name);
+        if (data) {
+            return JSON.parse(data);
+        } else {
+            return '';
+        }
+    }
+
+    // localStorage删除项
+    removeStorage(name) {
+        window.localStorage.removeItem(name);
+    }
+
 }
 
 export default CommerceUtil;

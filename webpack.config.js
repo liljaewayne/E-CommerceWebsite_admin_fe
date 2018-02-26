@@ -104,6 +104,11 @@ module.exports = {
             "/manage": {
                 target: "http://admin.liujianwei.top",
                 changeOrigin: true/* 使发送的请求以服务器域名为源地址, 解决跨域问题 */
+            },
+            // 单独配置不以/manage开头的请求
+            "/user/logout.do": {
+                target: "http://admin.liujianwei.top",
+                changeOrigin: true
             }
         }
     }
