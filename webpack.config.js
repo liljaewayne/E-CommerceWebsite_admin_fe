@@ -15,7 +15,9 @@ module.exports = {
         alias: {
             /* src的模块引用路径 */
             page: path.resolve(__dirname, 'src/page'),
-            component: path.resolve(__dirname, 'src/component')
+            component: path.resolve(__dirname, 'src/component'),
+            util: path.resolve(__dirname, 'src/util'),
+            service: path.resolve(__dirname, 'src/service')
         }
     },
     module: {
@@ -95,6 +97,14 @@ module.exports = {
         /* 使404页面访问到首页 */
         historyApiFallback: {
             index: "/dist/index.html"
+        },
+        // 开发时请求劫持
+        proxy: {
+            // 以/manage开头的请求
+            "/manage": {
+                target: "http://admin.liujianwei.top",
+                changeOrigin: true/* 使发送的请求以服务器域名为源地址, 解决跨域问题 */
+            }
         }
     }
 };

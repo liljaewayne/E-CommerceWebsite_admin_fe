@@ -14,7 +14,7 @@ class Layout extends React.Component {
             <div id="wrapper">
                 <TopNav></TopNav>
                 <SideNav></SideNav>
-                {this.props.children}
+                {this.props.children}{/* page-wrapper */}
             </div>
         );
     }
