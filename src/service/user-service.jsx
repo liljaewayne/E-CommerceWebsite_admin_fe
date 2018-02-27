@@ -43,6 +43,17 @@ class UserService {
             url: '/user/logout.do'
         });
     }
+
+    // 用户列表
+    listUsers(pageNum) {
+        return _commerce.request({
+            type: "post",
+            url: '/manage/user/list.do',
+            data: {
+                pageNum: pageNum
+            }
+        });
+    }
 }
 
 export default UserService;

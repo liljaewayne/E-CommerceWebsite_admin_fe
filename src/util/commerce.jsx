@@ -8,7 +8,7 @@ class CommerceUtil {
                 url: param.url || "",
                 dataType: param.dataType || "json",
                 data: param.data || null,
-                success(res) {
+                success: res => {
                     if (0 === res.status) {
                         typeof resolve === 'function' && resolve(res.data, res.msg);
                     } else if (10 === res.status) {
@@ -18,7 +18,7 @@ class CommerceUtil {
                         typeof reject === 'function' && reject(res.msg || res.data);
                     }
                 },
-                error(err) {
+                error: err => {
                     // statusText是http请求对象中的信息
                     typeof reject === 'function' && reject(err.statusText);
                 }
