@@ -50,7 +50,7 @@ class CategorySelector extends React.Component {
 
     // 加载一级分类
     loadFirstCategory() {
-        _productService.getCategoryList().then(res => {
+        _productService.listCategorys().then(res => {
             this.setState({
                 firstCategoryList: res
             });
@@ -61,7 +61,7 @@ class CategorySelector extends React.Component {
 
     // 加载二级分类
     loadSecondCategory() {
-        _productService.getCategoryList(this.state.firstCategoryId).then(res => {
+        _productService.listCategorys(this.state.firstCategoryId).then(res => {
             this.setState({
                 secondCategoryList: res
             });

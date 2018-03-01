@@ -101,7 +101,7 @@ class ProductService {
      */
 
     // 根据父品类id获取品类列表
-    getCategoryList(parentCategoryId) {
+    listCategorys(parentCategoryId) {
         return _commerce.request({
             type: 'post',
             url: '/manage/category/get_category.do',
