@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Switch, Redirect, Route, Link} from 'react-rout
 import Layout from 'component/layout/index.jsx';
 // 页面
 import Home from 'page/home/index.jsx';
+import ProductRouter from 'page/product/router.jsx';
 import Login from 'page/login/index.jsx';
 import UserList from 'page/user/index.jsx';
 import ErrorPage from 'page/error/index.jsx';
@@ -26,8 +27,8 @@ class App extends React.Component {
                                 {/* 布局中引用的内容板块 */}
                                 <Switch>
                                     <Route exact path="/" component={Home}></Route>
-                                    <Route path="/product" component={Home}></Route>
-                                    <Route path="/product-category" component={Home}></Route>
+                                    <Route path="/product" component={ProductRouter}></Route>
+                                    <Route path="/product-category" component={ProductRouter}></Route>
                                     <Route path="/user/index" component={UserList}></Route>
                                     <Redirect exact from="/user" to="/user/index"></Redirect>
 
