@@ -49,6 +49,11 @@ class CommerceUtil {
         alert(errMsg || 'something went wrong');
     }
 
+    // 错误提示
+    successTips(msg) {
+        alert(msg || '操作成功');
+    }
+
     // 写入localStorage
     setStorage(name, data) {
         let dataType = typeof data;
