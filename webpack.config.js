@@ -3,12 +3,15 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+console.log('WEBPACK_ENV:', WEBPACK_ENV);
+
 module.exports = {
     entry: './src/app.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
         /* publicPath相当于html中引用文件的路径前面加的前缀 */
-        publicPath: "/dist/",
+        publicPath: WEBPACK_ENV === 'dev' ? "/dist/" : "//s.liujianwei.top/admin-fe/dist",
         filename: 'js/app.js'
     },
     resolve: {
