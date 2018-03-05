@@ -38,7 +38,9 @@ class TopNav extends React.Component {
                             {
                                 this.state.username
                                     ? <span>欢迎, {this.state.username}</span>
-                                    : <span>请登录</span>
+                                    : <span onClick={() =>
+                                        _commerce.doLogin()
+                                    }>请登录</span>
                             }
 
                             <i className="fa fa-caret-down"></i>
