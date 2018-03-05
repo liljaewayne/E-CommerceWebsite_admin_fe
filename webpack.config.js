@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         /* publicPath相当于html中引用文件的路径前面加的前缀 */
-        publicPath: WEBPACK_ENV === 'dev' ? "/dist/" : "//s.liujianwei.top/admin-fe/dist",
+        publicPath: WEBPACK_ENV === 'dev' ? "/dist/" : "//s.liujianwei.top/commerce-admin-fe/dist",
         filename: 'js/app.js'
     },
     resolve: {
